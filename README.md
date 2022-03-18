@@ -1,8 +1,8 @@
 Angular
 =======
 
-The sources for this package are in the main [Angular](https://github.com/angular/angular) repo. Please file issues and pull requests against that repo.
+### This is a fork from @angular-core
 
-Usage information and reference details can be found in [Angular documentation](https://angular.io/docs).
+We fixed the problem when app crashed when we had some breapkpoints in the code.
 
-License: MIT
+The fix was apied on branch 12.2.x
