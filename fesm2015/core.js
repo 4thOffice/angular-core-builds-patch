@@ -5195,7 +5195,20 @@ function getPolicy() {
  */
 function trustedHTMLFromString(html) {
     var _a;
-    return ((_a = getPolicy()) === null || _a === void 0 ? void 0 : _a.createHTML(html)) || html;
+
+    /**
+     * Fixed by blazka because of InnerHTML of undefined issue
+     * https://github.com/4thOffice/brisket/issues/7359
+     * https://github.com/angular/angular/issues/41015
+     */
+    let ret;
+    try {
+        ret = ((_a = getPolicy()) === null || _a === void 0 ? void 0 : _a.createHTML(html)) || html;
+    } catch (err) {
+        ret = html
+    }
+
+    return ret;
 }
 /**
  * Unsafely promote a string to a TrustedScript, falling back to strings when
@@ -5318,7 +5331,20 @@ function getPolicy$1() {
  */
 function trustedHTMLFromStringBypass(html) {
     var _a;
-    return ((_a = getPolicy$1()) === null || _a === void 0 ? void 0 : _a.createHTML(html)) || html;
+
+    /**
+     * Fixed by blazka because of InnerHTML of undefined issue
+     * https://github.com/4thOffice/brisket/issues/7359
+     * https://github.com/angular/angular/issues/41015
+     */
+    let ret;
+    try {
+        ret = ((_a = getPolicy$1()) === null || _a === void 0 ? void 0 : _a.createHTML(html)) || html;
+    } catch (err) {
+        ret = html
+    }
+
+    return ret;
 }
 /**
  * Unsafely promote a string to a TrustedScript, falling back to strings when
