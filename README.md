@@ -5,4 +5,4 @@ Angular
 
 We fixed the problem when app crashed when we had some breapkpoints in the code.
 
-The fix was apied on branch 12.2.x
+- The fix was aplied on branch 12.2.x
